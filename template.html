@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend Day ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .bg-gradient-modern {
+            background: linear-gradient(135deg, #fef7ff 0%, #fdf4ff 25%, #f8fafc 50%, #f1f5f9 75%, #f8fafc 100%);
+        }
+        
+        .bg-mesh {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+        }
+        
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+            animation: float 8s ease-in-out infinite 3s;
+        }
+        
+        .animate-bounce-gentle {
+            animation: bounceGentle 2s ease-in-out infinite;
+        }
+        
+        .animate-pulse-love {
+            animation: pulseHeart 1.5s ease-in-out infinite;
+        }
+        
+        .animate-wiggle {
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        /* Emote Love Berjalan */
+        .love-runner {
+            position: fixed;
+            font-size: 2rem;
+            animation: runAcross 8s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+        
+        .love-runner-2 {
+            top: 60%;
+            animation: runLeft 10s linear infinite 3s;
+        }
+        
+        @keyframes runRight {
+            0% { left: -100px; transform: rotate(0deg); }
+            100% { left: 100vw; transform: rotate(360deg); }
+        }
+        
+        @keyframes runLeft {
+            0% { right: -100px; transform: rotate(0deg) scaleX(-1); }
+            100% { right: 100vw; transform: rotate(-360deg) scaleX(-1); }
+        }
+        
+        @keyframes runDiagonal {
+            0% { left: -100px; top: 80%; transform: scale(0.8); }
+            50% { left: 50vw; top: 20%; transform: scale(1.2); }
+            100% { left: 100vw; top: 80%; transform: scale(0.8); }
+        }
+        
+        /* Falling Hearts */
+        .falling-heart {
+            position: fixed;
+            top: -50px;
+            animation: fall 10s linear infinite;
+            z-index: 40;
+            pointer-events: none;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .photo-container {
+            width: 280px;
+            height: 280px;
+            position: relative;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 4px rgba(255, 255, 255, 0.8),
+                0 0 0 8px rgba(236, 72, 153, 0.2),
+                0 20px 60px rgba(236, 72, 153, 0.15);
+            transition: all 0.4s ease;
+            animation: photoGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes photoGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 0 4px rgba(255, 255, 255, 0.8),
+                    0 0 0 8px rgba(236, 72, 153, 0.2),
+                    0 20px 60px rgba(236, 72, 153, 0.15);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 0 6px rgba(255, 255, 255, 0.9),
+                    0 0 0 12px rgba(236, 72, 153, 0.4),
+                    0 25px 80px rgba(236, 72, 153, 0.3);
+            }
+        }
+        
+        .photo-container:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-modern {
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: buttonGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonGlow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3); }
+            50% { box-shadow: 0 8px 30px rgba(236, 72, 153, 0.5); }
+        }
+        
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+        
+        .btn-modern:hover {
+            transform: translateY(-3px) scale(1.05);
+            animation-play-state: paused;
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.4);
+        }
+        
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .animate-slideUp-delay-1 {
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+        
+        .animate-slideUp-delay-2 {
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+        
+        .animate-slideUp-delay-3 {
+            animation: slideUp 0.8s ease-out 0.6s both;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .decoration-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #ec4899, #a855f7);
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 0;
+            color: #ec4899;
+            opacity: 0.3;
+            animation: quoteFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes quoteFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Animated Background Hearts */
+        .bg-heart {
+            position: fixed;
+            color: rgba(236, 72, 153, 0.1);
+            animation: heartFloat 20s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        /* Title Animation */
+        .title-animate {
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-modern min-h-screen">
+    <!-- Emote Love Berjalan -->
+    <div class="love-runner love-runner-2">❤️</div>
+    
+    <!-- Background Floating Hearts -->
+    <div class="bg-heart text-6xl" style="left: 10%; animation-delay: 0s;">💕</div>
+    <div class="bg-heart text-4xl" style="left: 20%; animation-delay: 5s;">❤️</div>
+    <div class="bg-heart text-5xl" style="left: 30%; animation-delay: 10s;">💖</div>
+    <div class="bg-heart text-3xl" style="left: 40%; animation-delay: 15s;">💝</div>
+    <div class="bg-heart text-6xl" style="left: 50%; animation-delay: 20s;">💗</div>
+    <div class="bg-heart text-4xl" style="left: 60%; animation-delay: 25s;">💕</div>
+    <div class="bg-heart text-5xl" style="left: 70%; animation-delay: 30s;">❤️</div>
+    <div class="bg-heart text-3xl" style="left: 80%; animation-delay: 35s;">💖</div>
+    <div class="bg-heart text-6xl" style="left: 90%; animation-delay: 40s;">💗</div>
+
+    <!-- Floating Decorations -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-10">
+        <div class="decoration-dot top-20 left-20 animate-float"></div>
+        <div class="decoration-dot top-40 right-32 animate-float-delayed"></div>
+        <div class="decoration-dot bottom-32 left-40 animate-float"></div>
+        <div class="decoration-dot top-60 left-1/2 animate-float-delayed"></div>
+        <div class="decoration-dot bottom-40 right-20 animate-float"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-mesh">
+        <div class="text-center z-20 px-4 max-w-4xl mx-auto">
+            <div class="animate-slideUp">
+                <h1 class="font-playfair text-5xl md:text-7xl text-gray-800 mb-6 font-bold title-animate">
+                    Happy Girlfriend Day
+                </h1>
+                <div class="text-4xl mb-8 animate-pulse-love">❤️</div>
+                <h2 class="font-inter text-xl md:text-2xl text-gray-600 mb-12 font-light animate-bounce-gentle">
+                    Merayakan dirimu hari ini dan selamanya
+                </h2>
+            </div>
+            
+            <!-- Photo Frame -->
+            <div class="animate-slideUp-delay-1 mb-12">
+                <div class="photo-container">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" 
+                         alt="Foto cantik" 
+                         class="rounded-full">
+                </div>
+            </div>
+            
+            <div class="animate-slideUp-delay-2">
+                <p class="font-inter text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                    Setiap momen bersamamu terasa seperti perayaan. Hari ini adalah alasan lain untuk mengingatkanmu betapa istimewanya dirimu bagiku.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Floating Elements with Animation -->
+        <div class="absolute top-1/4 left-10 text-pink-400 text-2xl animate-float opacity-70 animate-wiggle">✨</div>
+        <div class="absolute top-1/3 right-16 text-purple-400 text-xl animate-float-delayed opacity-70 animate-bounce-gentle">💫</div>
+        <div class="absolute bottom-1/4 left-20 text-pink-300 text-2xl animate-float opacity-70 animate-pulse-love">🌸</div>
+        <div class="absolute bottom-1/3 right-10 text-purple-300 text-xl animate-float-delayed opacity-70 animate-wiggle">✨</div>
+        <div class="absolute top-1/2 left-1/4 text-red-400 text-lg animate-float opacity-60 animate-bounce-gentle">💕</div>
+        <div class="absolute top-2/3 right-1/4 text-pink-400 text-lg animate-float-delayed opacity-60 animate-pulse-love">❤️</div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass-card rounded-3xl p-12 md:p-16 animate-slideUp relative">
+                <div class="quote-mark absolute top-8 left-8">"</div>
+                <blockquote class="font-playfair text-2xl md:text-3xl text-gray-800 mb-8 italic font-medium">
+                    Kamu bukan hanya pacarku, tapi juga sahabat terbaik, pasangan dalam segala hal, dan alasan aku tersenyum setiap hari.
+                </blockquote>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="font-inter text-gray-600">
+                    — Dengan segenap cintaku 💕
+                </p>
+                <div class="quote-mark absolute bottom-8 right-8 transform rotate-180">"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Gallery -->
+    <section class="py-20 px-4 bg-white bg-opacity-30">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="font-playfair text-4xl md:text-5xl text-center text-gray-800 mb-16 animate-slideUp title-animate">
+                Kenangan Indah Kita
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden animate-slideUp-delay-1 hover:scale-105 transition-all duration-500 group">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop" 
+                             alt="Kenangan 1" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-gray-800 mb-2">Petualangan Pertama</h4>
+                        <p class="font-inter text-sm text-gray-600">Dimana cerita kita dimulai <span class="animate-pulse-love">💕</span></p>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl overflow-hidden animate-slideUp-delay-2 hover:scale-105 transition-all duration-500 group">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=400&h=300&fit=crop"
+                             alt="Kenangan 2" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-gray-800 mb-2">Momen Manis</h4>
+                        <p class="font-inter text-sm text-gray-600">Membuat kenangan bersama <span class="animate-bounce-gentle">✨</span></p>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl overflow-hidden animate-slideUp-delay-3 hover:scale-105 transition-all duration-500 group">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=300&fit=crop"
+                             alt="Kenangan 3" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-gray-800 mb-2">Waktu Bahagia</h4>
+                        <p class="font-inter text-sm text-gray-600">Tawa dan kegembiraan bersama <span class="animate-wiggle">🌸</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Note Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="font-playfair text-4xl md:text-5xl text-center text-gray-800 mb-16 animate-slideUp title-animate">
+                Catatan Cinta Untukmu
+            </h3>
+            
+            <div class="glass-card rounded-3xl p-8 md:p-12 animate-slideUp-delay-1">
+                <div class="text-center mb-8">
+                    <div class="text-4xl mb-4 animate-pulse-love">💌</div>
+                    <h4 class="font-playfair text-2xl text-gray-800 font-semibold">Untuk Cintaku</h4>
+                </div>
+                
+                <div class="font-inter text-gray-700 leading-relaxed space-y-6 text-center max-w-3xl mx-auto">
+                    <p>Sayangku,</p>
+                    
+                    <p>
+                        Hari ini adalah Hari Girlfriend, dan aku ingin menggunakan momen ini untuk memberitahumu betapa berartinya kamu bagiku. Setiap hari bersamamu adalah hadiah yang aku syukuri.
+                    </p>
+                    
+                    <p>
+                        Kamu membawa cahaya ke hari-hariku dan kedamaian di malam-malamku. Bersamamu, aku telah menemukan seperti apa rasanya kebahagiaan sejati.
+                    </p>
+                    
+                    <p>
+                        Terima kasih telah menjadi dirimu - untuk senyumanmu, kehangatanmu, dan cinta yang begitu tulus kamu berikan. Kamu membuat segalanya menjadi lebih baik.
+                    </p>
+                    
+                    <p class="font-playfair text-xl text-gray-800 pt-4 font-medium">
+                        Selamanya milikmu,<br>
+                        Pasangan yang selalu mencintaimu <span class="animate-pulse-love">❤️</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 text-center">
+        <div class="max-w-2xl mx-auto animate-slideUp">
+            <h3 class="font-playfair text-3xl md:text-4xl text-gray-800 mb-8 font-semibold title-animate">
+                Ada Sesuatu yang Istimewa Untukmu
+            </h3>
+            
+            <p class="font-inter text-lg text-gray-700 mb-8">
+                Klik di bawah untuk melihat kejutan yang telah aku siapkan khusus untukmu <span class="animate-pulse-love">💝</span>
+            </p>
+            
+            <button class="btn-modern text-white font-inter font-medium px-10 py-4 rounded-full text-lg inline-flex items-center gap-3 relative z-10">
+                <span>Temukan Kejutanmu</span>
+                <span class="text-xl animate-bounce-gentle">✨</span>
+            </button>
+            
+            <div class="mt-8 text-4xl">
+                <span class="animate-pulse-love">🎉</span>
+                <span class="animate-wiggle">✨</span>
+                <span class="animate-bounce-gentle">💖</span>
+                <span class="animate-wiggle">✨</span>
+                <span class="animate-pulse-love">🎉</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-white bg-opacity-40 text-center border-t border-white border-opacity-30">
+        <div class="font-playfair text-xl text-gray-700 mb-2">
+            Dibuat dengan cinta, khusus untukmu <span class="animate-pulse-love">💕</span>
+        </div>
+        <div class="font-inter text-gray-600 text-sm">
+            Happy Girlfriend Day 2025 <span class="animate-bounce-gentle">❤️</span>
+        </div>
+    </footer>
+
+    <script>
+        // Surprise button functionality
+        document.querySelector('.btn-modern').addEventListener('click', function() {
+            const messages = [
+                "🎉 Kejutanmu menanti! Cek pesanmu 💝",
+                "✨ Ada sesuatu yang istimewa sedang menunggu 💕",
+                "💖 Kejutan terbaik akan segera datang!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(randomMessage);
+        });
+        
+        // Create falling hearts
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            heart.innerHTML = ['💕', '❤️', '💖', '💗', '💝'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = (Math.random() * 1.5 + 0.5) + 'rem';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        
+        // Create falling hearts every 3 seconds
+        setInterval(createFallingHeart, 3000);
+        
+        // Add more floating love emotes
+        function createFloatingLove() {
+            const love = document.createElement('div');
+            love.style.position = 'fixed';
+            love.style.pointerEvents = 'none';
+            love.style.zIndex = '30';
+            love.innerHTML = ['💕', '❤️', '💖', '💗'][Math.floor(Math.random() * 4)];
+            love.style.left = Math.random() * 90 + '%';
+            love.style.top = Math.random() * 90 + '%';
+            love.style.fontSize = '1.5rem';
+            love.style.animation = 'float 6s ease-in-out infinite';
+            love.style.opacity = '0.6';
+            
+            document.body.appendChild(love);
+            
+            setTimeout(() => {
+                love.remove();
+            }, 8000);
+        }
+        
+        // Create floating love emotes every 5 seconds
+        setInterval(createFloatingLove, 5000);
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.animate-float, .animate-float-delayed');
+            
+            parallax.forEach(element => {
+                const speed = 0.3;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Add interactive hover effects
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
